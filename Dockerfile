@@ -22,6 +22,10 @@ RUN bash -c "source ~/.nvm/nvm.sh && npm install --global gulp-cli && npm instal
 #install aws cli
 RUN sudo apt-get install -y python-pip && pip install --user awscli
 
+#install kubectl
+RUN curl -o $HOME/.local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.7.4/bin/linux/amd64/kubectl && \
+    chmod +x $HOME/.local/bin/kubectl
+
 RUN echo "export PATH=\$PATH:\$HOME/.local/bin" >> /home/circleci/.bashrc
 
 RUN sudo apt-get remove -y libpng-dev libmcrypt-dev python-pip && sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
