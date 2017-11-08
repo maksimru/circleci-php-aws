@@ -1,7 +1,7 @@
 FROM circleci/php:7.1.8-browsers
 
 ARG NODE_VERSION
-ENV NODE_VERSION ${NODE_VERSION:-6}
+ENV NODE_VERSION ${NODE_VERSION:-8}
 
 #install php modules for test purposes
 RUN sudo apt-get install -y libpng-dev libmcrypt-dev && \
