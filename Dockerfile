@@ -5,7 +5,7 @@ ENV NODE_VERSION ${NODE_VERSION:-8}
 
 #install php modules for test purposes
 RUN sudo apt-get install -y libpng-dev libmcrypt-dev && \
-    sudo docker-php-ext-install gd bcmath mcrypt pdo pdo_mysql
+    sudo docker-php-ext-install gd bcmath mcrypt pdo pdo_mysql imagick
 
 #install node
 RUN rm -rf ~/.nvm && \
