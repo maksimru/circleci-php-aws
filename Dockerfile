@@ -6,7 +6,7 @@ ENV NODE_VERSION ${NODE_VERSION:-8}
 #install php modules for test purposes
 RUN sudo apt-get update && \
     sudo apt-get install -y libpng-dev libmcrypt-dev libmagickwand-dev --no-install-recommends && \
-    sudo docker-php-ext-install gd bcmath mcrypt pdo pdo_mysql
+    sudo docker-php-ext-install gd bcmath mcrypt pdo pdo_mysql zip
 
 #install imagick
 RUN sudo pecl install imagick && sudo docker-php-ext-enable imagick
